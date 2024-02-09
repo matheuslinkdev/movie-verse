@@ -1,0 +1,24 @@
+@import './variaveis.scss';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body{
+  background-color: $preto-01;
+  color: $branco;
+}
+
+a{
+  text-decoration: none;
+  color: $cinza-03;
+  transition: .4s;
+
+  &:hover{
+    color: $cinza-01;
+  }
+}
+
