@@ -14,8 +14,6 @@ const Home = () => {
     const data = await res.json();
 
     setTopMovies(data.results);
-
-    console.log(data);
   };
 
   useEffect(() => {
@@ -31,7 +29,7 @@ const Home = () => {
       <article className="movies-container">
         {topMovies.length === 0 && <h2>Loading</h2>}
         {topMovies.length > 0 &&
-          topMovies.map((movie) => <MovieCard key={movie.id} movie={movie}/>)}
+          topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </article>
     </main>
   );
