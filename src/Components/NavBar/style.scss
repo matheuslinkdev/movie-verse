@@ -1,0 +1,76 @@
+@import "../../styles/variaveis.scss";
+
+#navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5dvh auto;
+}
+
+#navbar > section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3dvh auto;
+
+  a,
+  svg {
+    color: $cinza-02;
+    transition: ease-in .5s;
+  }
+
+  &:hover {
+    a,
+    svg {
+      color: $amarelo-01;
+    }
+  }
+}
+
+.nav-form{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input{
+        width: 300px;
+        height: 40px;
+        border: 1px solid $cinza-03;
+        border-radius: 20px;
+        background-color: transparent;
+        text-align: center;
+        transition: ease-in .4s;
+        font-size: 1.1rem;
+        font-weight: 200;
+        color: $cinza-01;
+
+        ::placeholder{
+            opacity: 75%;
+        }
+
+        &:hover{
+            border: 1px solid $amarelo-01;
+        }
+    }
+
+    button{
+        background-color: transparent;
+        border: none;
+
+        svg{
+            color: $cinza-02;
+            transition: .3s ease-in-out;
+            width: 35px;
+            height: 35px;
+            margin-left: 5px;
+            margin-top: 5px;
+
+            &:hover{
+                color: $amarelo-01;
+                cursor: pointer;
+            }
+        }
+    }
+}
