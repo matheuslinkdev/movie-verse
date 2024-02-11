@@ -1,0 +1,36 @@
+@import "../../styles/variaveis.scss";
+
+.movie-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10dvh auto;
+
+  .movie-card {
+    height: 430px;
+    overflow: auto;
+
+    h3 {
+      display: none;
+    }
+  }
+
+  section {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2dvw;
+
+    svg {
+      color: $amarelo-01;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 200;
+      margin: 1dvh 0;
+    }
+  }
+}

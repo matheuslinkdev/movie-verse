@@ -8,6 +8,8 @@ import {
 } from "react-icons/bs";
 import MovieCard from "../../Components/MovieCard";
 
+import './style.scss'
+
 const moviesURL = import.meta.env.VITE_API;
 const ApiKey = import.meta.env.VITE_API_KEY;
 
@@ -31,33 +33,36 @@ const Movie = () => {
     <main>
       {movie && (
         <>
-          <article>
+          <article className="movie-details">
             <MovieCard movie={movie} showLink={false} />
-            <p>{movie.tagline}</p>
+            <div>
+
             <section>
+            <p>{movie.tagline}</p>
               <h3>
-                <BsWallet2 /> Budget
+                <BsWallet2 /> Budget:
               </h3>
               <p>{movie.budget}</p>
             </section>
             <section>
               <h3>
-                <BsGraphUp /> Revenue
+                <BsGraphUp /> Revenue:
               </h3>
               <p>{movie.revenue}</p>
             </section>
             <section>
               <h3>
-                <BsHourglassSplit /> Time
+                <BsHourglassSplit /> Time:
               </h3>
               <p>{movie.runtime} minutes</p>
             </section>
             <section>
               <h3>
-                <BsFillFileEarmarkTextFill /> Description
+                <BsFillFileEarmarkTextFill /> Description:
               </h3>
               <p>{movie.overview}</p>
             </section>
+            </div>
           </article>
         </>
       )}

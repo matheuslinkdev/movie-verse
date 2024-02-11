@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <main className="container">
       <NavBar />
-      <h2>Best Movies: </h2>
+      <h2>Top Rated Movies: </h2>
       <article className="movies-container">
         {topMovies.length === 0 && <h2>Loading</h2>}
         {topMovies.length > 0 &&
