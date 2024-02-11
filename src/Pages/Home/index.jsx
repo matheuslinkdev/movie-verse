@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 const moviesURL = import.meta.env.VITE_API;
 const ApiKey = import.meta.env.VITE_API_KEY;
 
+import './style.scss'
+
 import NavBar from "../../Components/NavBar";
 import MovieCard from "../../Components/MovieCard";
 

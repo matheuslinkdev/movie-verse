@@ -31,24 +31,34 @@ const Movie = () => {
     <main>
       {movie && (
         <>
-          <MovieCard movie={movie} showLink={false} />
-          <p>{movie.tagline}</p>
-          <section>
-            <h3><BsWallet2/> Budget</h3>
-            <p>{movie.budget}</p>
-          </section>
-          <section>
-            <h3><BsGraphUp/> Revenue</h3>
-            <p>{movie.revenue}</p>
-          </section>
-          <section>
-            <h3><BsHourglassSplit/> Time</h3>
-            <p>{movie.runtime} minutes</p>
-          </section>
-          <section>
-            <h3><BsFillFileEarmarkTextFill/> Description</h3>
-            <p>{movie.overview}</p>
-          </section>
+          <article>
+            <MovieCard movie={movie} showLink={false} />
+            <p>{movie.tagline}</p>
+            <section>
+              <h3>
+                <BsWallet2 /> Budget
+              </h3>
+              <p>{movie.budget}</p>
+            </section>
+            <section>
+              <h3>
+                <BsGraphUp /> Revenue
+              </h3>
+              <p>{movie.revenue}</p>
+            </section>
+            <section>
+              <h3>
+                <BsHourglassSplit /> Time
+              </h3>
+              <p>{movie.runtime} minutes</p>
+            </section>
+            <section>
+              <h3>
+                <BsFillFileEarmarkTextFill /> Description
+              </h3>
+              <p>{movie.overview}</p>
+            </section>
+          </article>
         </>
       )}
     </main>
