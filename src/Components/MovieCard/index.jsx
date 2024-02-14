@@ -17,12 +17,14 @@ const MovieCard = ({ movie, showLink = true }) => {
       </section>
       <section className="movie-presentation">
         <h2>{movie.title}</h2>
-      <span>Release Year: {releaseYear}</span>
+        <span>Release Year: {releaseYear}</span>
         <h3>
           <FaStar /> {roundedAverage}
         </h3>
         {showLink && (
-            <Link to={`/movie/${movie.id}`} className="btn-details"><p>Details</p></Link>
+          <Link to={`/movie-verse/movie/${movie.id}`} className="btn-details">
+            <p>Details</p>
+          </Link>
         )}
       </section>
     </article>

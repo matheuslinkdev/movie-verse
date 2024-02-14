@@ -40,8 +40,8 @@ const Movie = () => {
 
   return (
     <main>
-      <Return destinyRoute="/" />
-      <NavBar/>
+      <Return destinyRoute="/movie-verse/"/>
+      <NavBar />
       {movie && (
         <>
           <article className="movie-details">

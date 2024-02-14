@@ -22,12 +22,12 @@ const Search = () => {
     const searchWithQueryUrl = `${searchUrl}?${apiKey}&query=${query}`;
 
     getSearchedMovies(searchWithQueryUrl);
-  }, [query]); //add query to the rendered movies change every time tht the search content changes
+  }, []); //add query to the rendered movies change every time tht the search content changes
 
   return (
     <main className="container">
-      <Return destinyRoute="/" />
-      <NavBar />
+      <Return destinyRoute={`movie-verse/search`} />
+      <NavBar query={query} />
       <h2>
         Results to: <span>{query}</span>
       </h2>

@@ -16,14 +16,14 @@ const NavBar = () => {
       return;
     }
 
-    navigate(`/search?q=${search}`);
-    setSearch("");
+    navigate(`/movie-verse/search?q=${search}`);
+    setSearch(search);
   };
   return (
     <nav id="navbar">
       <section>
         <h2>
-          <Link to="/">
+          <Link to="/movie-verse/">
             <BiCameraMovie /> MovieVerse
           </Link>
         </h2>
