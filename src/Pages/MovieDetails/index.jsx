@@ -15,7 +15,7 @@ import NavBar from "../../Components/NavBar";
 const moviesURL = import.meta.env.VITE_API;
 const ApiKey = import.meta.env.VITE_API_KEY;
 
-const Movie = () => {
+const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -82,4 +82,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default MovieDetails;

@@ -22,7 +22,7 @@ const MovieCard = ({ movie, showLink = true }) => {
           <FaStar /> {roundedAverage}
         </h3>
         {showLink && (
-          <Link to={`/movie-verse/movie/${movie.id}`} className="btn-details">
+          <Link to={`/movie-verse/details/${movie.id}`} className="btn-details">
             <p>Details</p>
           </Link>
         )}
