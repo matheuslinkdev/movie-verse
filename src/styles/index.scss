@@ -1,24 +1,31 @@
-@import './variaveis.scss';
+@import "./variaveis.scss";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
-body{
+body {
   background-color: $preto-01;
   color: $branco;
 }
 
-a{
+.return-link {
+  text-decoration: underline;
+  color: $amarelo-01;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+a {
   text-decoration: none;
   color: $cinza-03;
-  transition: .4s;
+  transition: 0.4s;
 
-  &:hover{
+  &:hover {
     color: $cinza-01;
   }
 }
-

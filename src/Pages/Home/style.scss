@@ -1,18 +1,18 @@
-@import '../../styles/variaveis.scss';
+@import "../../styles/variaveis.scss";
 
-.container{
-    h2{
-        text-align: center;
-        margin: 2dvh auto;
-        color: $cinza-02;
-        font-weight: 200;
-    }
+.movies-container {
+  max-width: 95%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
-.movies-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
+.container > h2 {
+  text-align: center;
+  margin: 2dvh auto;
+  font-size: 1.6rem;
+  font-weight: 400;
 }

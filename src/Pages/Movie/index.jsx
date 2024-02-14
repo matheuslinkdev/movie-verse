@@ -8,7 +8,9 @@ import {
 } from "react-icons/bs";
 import MovieCard from "../../Components/MovieCard";
 
-import './style.scss'
+import "./style.scss";
+import Return from "../../Components/Return";
+import NavBar from "../../Components/NavBar";
 
 const moviesURL = import.meta.env.VITE_API;
 const ApiKey = import.meta.env.VITE_API_KEY;
@@ -29,39 +31,49 @@ const Movie = () => {
     getMovie(movieUrl);
   });
 
+  const formatValue = (value) => {
+    return value.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+  };
+
   return (
     <main>
+      <Return destinyRoute="/" />
+      <NavBar/>
       {movie && (
         <>
           <article className="movie-details">
-            <MovieCard movie={movie} showLink={false} />
             <div>
-
-            <section>
-            <p>{movie.tagline}</p>
-              <h3>
-                <BsWallet2 /> Budget:
-              </h3>
-              <p>{movie.budget}</p>
-            </section>
-            <section>
-              <h3>
-                <BsGraphUp /> Revenue:
-              </h3>
-              <p>{movie.revenue}</p>
-            </section>
-            <section>
-              <h3>
-                <BsHourglassSplit /> Time:
-              </h3>
-              <p>{movie.runtime} minutes</p>
-            </section>
-            <section>
-              <h3>
-                <BsFillFileEarmarkTextFill /> Description:
-              </h3>
-              <p>{movie.overview}</p>
-            </section>
+              <MovieCard movie={movie} showLink={false} />
+            </div>
+            <div>
+              <section>
+                <p className="tagline">{movie.tagline}</p>
+                <h3>
+                  <BsWallet2 /> Budget:
+                </h3>
+                <p>{formatValue(movie.budget)}</p>
+              </section>
+              <section>
+                <h3>
+                  <BsGraphUp /> Revenue:
+                </h3>
+                <p>{formatValue(movie.revenue)}</p>
+              </section>
+              <section>
+                <h3>
+                  <BsHourglassSplit /> Time:
+                </h3>
+                <p>{movie.runtime} minutes</p>
+              </section>
+              <section>
+                <h3>
+                  <BsFillFileEarmarkTextFill /> Description:
+                </h3>
+                <p>{movie.overview}</p>
+              </section>
             </div>
           </article>
         </>
