@@ -1,8 +1,7 @@
-# React + Vite
+# MovieVerse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Projeto em react que utiliza a api TheMovieDB, nele o usuário pode ver os 20 filmes mais bem avaliados, pesquisar por flimes e ver seus detalhes
 
-Currently, two official plugins are available:
+#### Usei o react-router-dom para fazer a navegação, e a lib react-icons para os... icons ;)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+** O maior desafio desse projeto creio que foi gerenciar as rotas baseadas no query submetido na pesquisa, algo que eu ainda não tinha manipulado dessa maneira, mas está aí, funcionando, podes acessar a página no link destacado justo com a descrição do repositório
