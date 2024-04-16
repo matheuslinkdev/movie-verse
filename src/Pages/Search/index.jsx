@@ -22,21 +22,28 @@ const Search = () => {
     const searchWithQueryUrl = `${searchUrl}?${apiKey}&query=${query}`;
 
     getSearchedMovies(searchWithQueryUrl);
-  }, []); //add query to the rendered movies change every time tht the search content changes
+  }, [query]); //add query to the rendered movies change every time tht the search content changes
 
   return (
-    <main className="container">
+    <>
       <Return destinyRoute={`movie-verse/search`} />
       <NavBar query={query} />
       <h2>
         Results to: <span>{query}</span>
       </h2>
-      <article className="movies-container">
+      <article
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "15px",
+          justifyContent: "center",
+        }}
+      >
         {movies.length === 0 && <h2>Movie not found</h2>}
         {movies.length > 0 &&
           movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </article>
-    </main>
+    </>
   );
 };
 

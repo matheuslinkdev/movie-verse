@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Providers>
         <main
           style={{
-            backgroundColor: "var(--chakra-colors-blue-900)",
+            backgroundImage: "radial-gradient(var(--chakra-colors-blue-700), var(--chakra-colors-blue-950))",
             minHeight: "100dvh",
           }}
         >

@@ -7,10 +7,8 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-body {
-  background-color: var(--chakra-colors-blue-900);
-  color: $branco;
-  min-height: 100dvh;
+body{
+  max-width: 100dvw;
 }
 
 .return-link {
@@ -29,4 +27,8 @@ a {
   &:hover {
     color: $cinza-01;
   }
+}
+
+p{
+  color: var(--chakra-colors-commons-100);
 }

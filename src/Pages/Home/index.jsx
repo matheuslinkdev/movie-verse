@@ -28,7 +28,7 @@ const Home = () => {
     <main>
       <NavBar />
       <h2>Top Rated Movies: </h2>
-      <article>
+      <article style={{display: "flex", flexWrap: "wrap", gap: "15px", justifyContent: "center"}}>
         {topMovies.length === 0 && <h2>Loading</h2>}
         {topMovies.length > 0 &&
           topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
