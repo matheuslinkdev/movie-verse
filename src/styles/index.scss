@@ -8,8 +8,9 @@
 }
 
 body {
-  background-color: $preto-01;
+  background-color: var(--chakra-colors-blue-900);
   color: $branco;
+  min-height: 100dvh;
 }
 
 .return-link {

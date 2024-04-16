@@ -1,5 +1,5 @@
 {
-  "homepage": "https://MthsLnk-gthb.github.io/movie-verse/",
+  "homepage": "https://matheuslinkdev.github.io/movie-verse/",
   "name": "movie-verse",
   "private": true,
   "version": "0.0.0",
@@ -13,6 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "framer-motion": "^11.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",

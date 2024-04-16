@@ -13,7 +13,7 @@ const MovieCard = ({ movie, showLink = true }) => {
   return (
     <article className="movie-card">
       <section className="movie-img">
-        <img src={imageUrl + movie.poster_path} alt={movie.title} />
+        <img src={imageUrl + movie.backdrop_path} alt={movie.title} />
       </section>
       <section className="movie-presentation">
         <h2>{movie.title}</h2>

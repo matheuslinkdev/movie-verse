@@ -25,10 +25,10 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="container">
+    <main>
       <NavBar />
       <h2>Top Rated Movies: </h2>
-      <article className="movies-container">
+      <article>
         {topMovies.length === 0 && <h2>Loading</h2>}
         {topMovies.length > 0 &&
           topMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}

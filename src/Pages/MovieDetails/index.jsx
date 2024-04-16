@@ -23,13 +23,14 @@ const MovieDetails = () => {
     const res = await fetch(url);
     const data = await res.json();
 
+    console.log(movie);
     setMovie(data);
   };
 
   useEffect(() => {
     const movieUrl = `${moviesURL}${id}?${ApiKey}`;
     getMovie(movieUrl);
-  });
+  }, []);
 
   const formatValue = (value) => {
     return value.toLocaleString("en-US", {
@@ -39,8 +40,8 @@ const MovieDetails = () => {
   };
 
   return (
-    <main>
-      <Return destinyRoute="/movie-verse/"/>
+    <>
+      <Return destinyRoute="/movie-verse/" />
       <NavBar />
       {movie && (
         <>
@@ -78,7 +79,7 @@ const MovieDetails = () => {
           </article>
         </>
       )}
-    </main>
+    </>
   );
 };
 
