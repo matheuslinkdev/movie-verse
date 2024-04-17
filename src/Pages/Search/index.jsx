@@ -3,10 +3,11 @@ import { useSearchParams } from "react-router-dom";
 import MovieCard from "../../Components/MovieCard";
 import NavBar from "../../Components/NavBar";
 import Return from "../../Components/Return";
+
 const searchUrl = import.meta.env.VITE_SEARCH;
 const apiKey = import.meta.env.VITE_API_KEY;
 
-const Search = () => {
+const Search = ({ addToFavorites }) => {
   const [searchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const query = searchParams.get("q");
@@ -22,7 +23,7 @@ const Search = () => {
     const searchWithQueryUrl = `${searchUrl}?${apiKey}&query=${query}`;
 
     getSearchedMovies(searchWithQueryUrl);
-  }, [query]); //add query to the rendered movies change every time tht the search content changes
+  }, [query]);
 
   return (
     <>
@@ -41,7 +42,13 @@ const Search = () => {
       >
         {movies.length === 0 && <h2>Movie not found</h2>}
         {movies.length > 0 &&
-          movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+          movies.map((movie) => (
+            <MovieCard
+              key={movie.id}
+              movie={movie}
+              addToFavorites={addToFavorites}
+            />
+          ))}
       </article>
     </>
   );

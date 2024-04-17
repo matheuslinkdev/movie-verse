@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-
-import "./style.scss";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import {
   Button,
   ButtonGroup,
@@ -16,27 +15,26 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import "./style.scss";
 
 const imageUrl = import.meta.env.VITE_IMG;
-const MovieCard = ({ movie, showLink = true }) => {
+
+const MovieCard = ({ movie, showLink = true, addToFavorites }) => {
   const [favorite, setFavorite] = useState(false);
 
   const handleAddFavorite = () => {
     if (!favorite) {
+      addToFavorites(movie);
       setFavorite(true);
     } else {
-      return alert("THIS MOVIE IS ALREADY IN TJHE FAVORITES LIST");
+      alert("This movie is already in favorites!");
     }
-    setFavorite(true);
-    console.log(`Clicked: ${movie.title}`);
   };
 
   const roundedAverage = parseFloat(movie.vote_average).toFixed(1);
   const releaseYear = movie.release_date.substring(0, 4);
-
-  console.log(movie);
 
   return (
     <Flex display="flex" maxW="95dvw">
@@ -71,7 +69,7 @@ const MovieCard = ({ movie, showLink = true }) => {
             <Button
               variant="ghost"
               colorScheme="blue"
-              onClick={() => handleAddFavorite()}
+              onClick={handleAddFavorite}
             >
               Add to Favs{" "}
               <Icon
