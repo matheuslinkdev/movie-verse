@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
 import MovieCard from "../../Components/MovieCard";
 import NavBar from "../../Components/NavBar";
-import Return from "../../Components/Return";
-import Favorites from "../../Components/Favorites"; // Importar o componente de favoritos
+import { Flex, Heading } from "@chakra-ui/react";
 
 const moviesURL = import.meta.env.VITE_API;
 const ApiKey = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
-  const [favorites, setFavorites] = useState([]); // Estado para armazenar os favoritos
 
   const getTopRatedMovies = async (url) => {
     const res = await fetch(url);
@@ -25,20 +22,12 @@ const Home = () => {
     getTopRatedMovies(topRatedUrl);
   }, []);
 
-  // Função para adicionar um filme aos favoritos
-  const addToFavorites = (movie) => {
-    if (!favorites.find((fav) => fav.id === movie.id)) {
-      setFavorites([...favorites, movie]);
-    } else {
-      alert("This movie is already in favorites!");
-    }
-  };
 
   return (
-    <main>
+    <Flex flexDir="column">
       <NavBar />
-      <h2>Top Rated Movies: </h2>
-      <article
+      <Heading display="flex" justifyContent="center" alignItems="center" color="#fff" size="lg" my={5}>Top Rated Movies: </Heading>
+      <Flex
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -52,12 +41,10 @@ const Home = () => {
             <MovieCard
               key={movie.id}
               movie={movie}
-              addToFavorites={addToFavorites}
             />
           ))}
-      </article>
-      <Favorites favorites={favorites} /> {/* Exibir a lista de favoritos */}
-    </main>
+      </Flex>
+    </Flex>
   );
 };
 

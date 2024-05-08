@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme";
+import PropTypes from 'prop-types'
 
 export function Providers({children}) {
   return (
@@ -7,4 +8,8 @@ export function Providers({children}) {
       <main>{children}</main>
     </ChakraProvider>
   );
+}
+
+Providers.propTypes ={
+  children: PropTypes.node
 }

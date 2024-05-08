@@ -42,7 +42,7 @@ const MovieDetails = () => {
     <>
     <Center minHeight="100dvh">
 
-      <Return destinyRoute="/movie-verse/" />
+      <Return destinyRoute="/" />
       {movie && (
         <Grid
           width="650px"
