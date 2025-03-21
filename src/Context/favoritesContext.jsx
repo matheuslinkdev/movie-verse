@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { createContext, useContext, useState, useEffect } from "react";
 
 const FavoriteContext = createContext();
@@ -16,10 +17,9 @@ export const FavoriteProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    console.log(favorites)
+    console.log(favorites);
   }, [favorites]);
 
-  
   const addMovieToFavorites = (movie) => {
     setFavorites((prevFavorites) => {
       if (!prevFavorites.some((fav) => fav.id == movie.id)) {
@@ -29,9 +29,11 @@ export const FavoriteProvider = ({ children }) => {
     });
   };
 
-  const removeMovieFromFavorites = (movieId) =>{
-    setFavorites((prevFavorites)=> prevFavorites.filter((fav) => fav.id !== movieId))
-  }
+  const removeMovieFromFavorites = (movieId) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((fav) => fav.id !== movieId)
+    );
+  };
 
   return (
     <FavoriteContext.Provider
@@ -40,5 +42,8 @@ export const FavoriteProvider = ({ children }) => {
       {children}
     </FavoriteContext.Provider>
   );
+};
 
+FavoriteProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };

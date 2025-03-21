@@ -1,19 +1,13 @@
-import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import {
-  Button,
   ButtonGroup,
   Box,
-  CardFooter,
-  Divider,
   Flex,
   Heading,
   Icon,
   Image,
-  Stack,
   Text,
-  Spacer,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -50,15 +44,18 @@ const MovieCard = ({ movie }) => {
         _hover={{ bg: "commons.950", transition: ".3s" }}
         w="430px"
         maxW="95dvw"
-        h={220}
+        h={200}
+        borderRadius="5px"
       >
         <Box>
           <Image
             src={imageUrl + movie.poster_path}
             alt={movie.title}
-            borderRadius={15}
-            h="200px"
-            minW="140px"
+            borderRadius={5}
+            h="180px"
+            minW="130px"
+            transition="ease-in-out .4s"
+            _hover={{ transform: "scale(1.2)" }}
           />
         </Box>
 
@@ -80,27 +77,36 @@ const MovieCard = ({ movie }) => {
             w="60px"
             justifyContent="space-between"
             position="absolute"
-            bottom={20}
+            bottom={12}
           >
             <FaStar /> {roundedAverage}
           </Text>
 
           <ButtonGroup spacing="2" position="absolute" bottom={5}>
             <Link to={`/details/${movie.id}`}>
-              <Button variant="solid" colorScheme="blue">
+              <Text
+                color="blue.200"
+                textDecor="underline"
+                _hover={{ color: "blue.400" }}
+                transition=".2s linear"
+              >
                 Details
-              </Button>
+              </Text>
             </Link>
-        
-              <Icon
+
+            <Icon
               onClick={handleToggleFavorite}
-              _hover={{cursor: "pointer"}}
-                as={isFavorite ? IoMdHeart : IoMdHeartEmpty}
-                color="blue.600"
-                marginLeft={2}
-                fontSize={24}
-              />
-         
+              _hover={{
+                cursor: "pointer",
+                color: "blue.400",
+                filter: "drop-shadow(0 0 2px var(--chakra-colors-blue-400))",
+              }}
+              transition=".3s ease-in-out"
+              as={isFavorite ? IoMdHeart : IoMdHeartEmpty}
+              color="blue.600"
+              marginLeft={2}
+              fontSize={24}
+            />
           </ButtonGroup>
         </Box>
       </Flex>

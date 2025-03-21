@@ -1,5 +1,15 @@
 import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
+  styles: {
+    global: {
+      "html, body": {
+        bgGradient: "linear(to-b, blue.700, blue.950)",
+        backgroundAttachment: "fixed",
+        minHeight: "100dvh",
+        width: "100%",
+      },
+    },
+  },
   colors: {
     blue: {
       200: "#b8e1ff",

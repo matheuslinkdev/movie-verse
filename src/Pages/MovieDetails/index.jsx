@@ -4,10 +4,8 @@ import {
   BsGraphUp,
   BsWallet2,
   BsHourglassSplit,
-  BsFillFileEarmarkTextFill,
 } from "react-icons/bs";
 
-import Return from "../../Components/Return";
 import { Grid, Flex, Heading, Image, Text, Center } from "@chakra-ui/react";
 
 const moviesURL = import.meta.env.VITE_API;
@@ -26,7 +24,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const movieUrl = `${moviesURL}${id}?${ApiKey}`;
     getMovie(movieUrl);
-  }, []);
+  });
 
   const formatValue = (value) => {
     return value.toLocaleString("en-US", {
@@ -41,8 +39,6 @@ const MovieDetails = () => {
   return (
     <>
     <Center minHeight="100dvh">
-
-      <Return destinyRoute="/" />
       {movie && (
         <Grid
           width="650px"

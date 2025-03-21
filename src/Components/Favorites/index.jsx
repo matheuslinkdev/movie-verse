@@ -1,12 +1,11 @@
+import PropTypes from "prop-types";
 import MovieCard from "../../Components/MovieCard";
-import NavBar from "../../Components/NavBar";
 import Return from "../../Components/Return";
 
 const Favorites = ({ favorites }) => {
   return (
     <>
       <Return destinyRoute={`movie-verse/favorites`} />
-      <NavBar />
       <h2>My Favorites: </h2>
       <article
         style={{
@@ -22,6 +21,14 @@ const Favorites = ({ favorites }) => {
       </article>
     </>
   );
+};
+
+Favorites.propTypes = {
+  favorites: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Favorites;
